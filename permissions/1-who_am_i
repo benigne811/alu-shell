@@ -1,4 +1,3 @@
 #!/bin/bash
-#print the effective username
-$(Who am I)
 
+whoami
