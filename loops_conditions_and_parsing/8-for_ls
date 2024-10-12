@@ -1,12 +1,8 @@
 #!/usr/bin/env bash
-#loop that prints the hour of the day in details i believe
-COUNT=0
-while((COUNT<=12));do
-	echo "Hour: $COUNT"
-	HOUR=1
-	while((HOUR<=59));do
-		echo "$HOUR"
-		((HOUR++))
-	done;
-((COUNT++))
-done;
+#list all files in each line without the hyphen
+FILES="$(ls)"
+for i in $FILES;
+do
+	NEW=$(find . -maxdepth 1 -name "$i" |cut -d "/" -f2 | cut -d "-" -f2)
+	echo "$NEW"
+done
